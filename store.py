@@ -28,7 +28,6 @@ class Store:
 
     def order(self, shopping_list) -> float:
         total_price = 0.0
-        
         for product, quantity in shopping_list:
             if product in self.products:
                 if product.get_quantity() >= quantity:

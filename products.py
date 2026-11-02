@@ -27,10 +27,10 @@ class Product:
         return self.active
 
     def activate(self):
-        self.actve = True
+        self.active = True
 
     def deactivate(self):
-        self.actve = False
+        self.active = False
 
     def show(self):
         print(f"{self.name}, Price: {self.price}, Quantity: {self.quantity}")
@@ -42,8 +42,11 @@ class Product:
             )
         if quantity < 1:
             raise ValueError(f"Quantity cannot be smaller then 1")
-
-        self.quantity = self.quantity - quantity
+        if quantity <= self.quantity:
+            self.quantity = self.quantity - quantity
+        else:
+            #if he buys more then available, sell all
+            self.quantity = 0
         return self.price
 
 if __name__ == "__main__":
