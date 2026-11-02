@@ -50,6 +50,7 @@ def make_order(best_buy):
         except ValueError:
             print("Value Error")
     if order:        
+        print("---ORDER SUMMERY---")
         for item, qty in order:
             print(f"Item: {item.name}, Quantity: {qty}")
 
